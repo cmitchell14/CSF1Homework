@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1525
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSF1Homework", "CSF1Homework\CSF1Homework.csproj", "{289B552B-B122-4FAD-BB82-738B9FD58C9E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FruitLoop1", "CSF1Homework\FruitLoop1.csproj", "{289B552B-B122-4FAD-BB82-738B9FD58C9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FruitLoop2", "FruitLoop2\FruitLoop2.csproj", "{4C53C576-F8D6-4533-852A-61A1798B2144}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MadLib", "MadLib\MadLib.csproj", "{22C69593-D615-4A46-B2C1-149B915B63B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{289B552B-B122-4FAD-BB82-738B9FD58C9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{289B552B-B122-4FAD-BB82-738B9FD58C9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{289B552B-B122-4FAD-BB82-738B9FD58C9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C53C576-F8D6-4533-852A-61A1798B2144}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C53C576-F8D6-4533-852A-61A1798B2144}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C53C576-F8D6-4533-852A-61A1798B2144}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C53C576-F8D6-4533-852A-61A1798B2144}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22C69593-D615-4A46-B2C1-149B915B63B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22C69593-D615-4A46-B2C1-149B915B63B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22C69593-D615-4A46-B2C1-149B915B63B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22C69593-D615-4A46-B2C1-149B915B63B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
