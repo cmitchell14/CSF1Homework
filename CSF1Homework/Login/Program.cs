@@ -34,43 +34,136 @@ namespace Login
             #region Variables
 
             const string userName = "CMITCHELL";
-            string userPassword = "WebDeveloper";
-            bool loopClose = true;
+            const string userPassword = "WebDeveloper";
+            string firstNameUser = "Caleb";
+            string inputUserName;
+            string inputPassword;
+            int attemptsRemaining;
+            bool loopExit = true;
+
             #endregion
 
             Console.Title = "====== Web Developer Login Station ======";
 
-            do
-            {
-                Console.WriteLine("Welcome to the Web Developer Intranet.");
-                Console.WriteLine("\nPlease login to continue.");
-                Console.Write("\nUsername:  ");
-                string userNameInput = Console.ReadLine().ToUpper();
+            Console.WriteLine("\nWelcome to the Web Developers Login. \n\nPlease Login to continue:"); //Welcome Screen
 
-                switch (userNameInput)
+            Console.WriteLine("\n\nPlease enter your username.");  //Prompt user for their username.
+            
+
+            for (int userAttempts = 1; userAttempts <= 3; userAttempts++)
+            {
+                Console.Write("\nusername:  ");
+                inputUserName = Console.ReadLine().ToUpper();
+
+                switch (inputUserName)
                 {
                     case userName:
-                        Console.WriteLine("\nPlease Enter your password.");
-                        Console.Write("Password:  ");
-                        string inputPassword = Console.ReadLine();
-                        
-                        switch (userPassword)
-                        {
-                            case inputPassword:
-                            
-                                break;
-                            default:
-                                Console.WriteLine("Invalid Password. You have 2 attempts remaining.");
-                                break;
-                        }
+                        goto userCorrect;
+                        break;
                     default:
-                }
+                        Console.WriteLine($"\n\nAccess denied.  Username {inputUserName} not found. \n\nPlease re-enter your username. \n\nYou have {attemptsRemaining = 3 - userAttempts} attempts remaining. ");
+                        break;
+                } //END SWITCH USERNAME
+            } // END FOR LOOP USERNAME
 
-            } while (loopClose);
-            
+            return;
+
+        userCorrect:;
+
+            Console.WriteLine($"\n\nHi {firstNameUser}, Please enter your password to gain access.");
+
+            for (int userAttempts = 1; userAttempts <= 3; userAttempts++)
+            {
+                Console.Write("\n\npassword:  ");
+                inputPassword = Console.ReadLine();
+
+                switch (inputPassword)
+                {
+                    case userPassword:
+                        goto passwordCorrect;
+                        break;
+                    default:
+                        Console.WriteLine($"\n\nAccess denied.  Incorrect password. \n\nPlease re-enter your password. \n\nYou have {attemptsRemaining = 3 - userAttempts} attempts remaining. ");
+                        break;
+                } //END SWITCH PASSWORD
+
+            } // END FOR LOOP PASSWORD
+
+            return;
+
+        passwordCorrect:;
+            Console.Clear();
+            Console.WriteLine("\n\n\n\nYou've successfully logged in through the Web Developers login page!!!");
+            Console.WriteLine("Here is a picture of Dwight Schrute as a congratulations!!!");
+            Console.WriteLine("\n\n" + @"                           `/+o/.
+                       .+sso+/:oydyo/:-:+shdys/    `-:.     `-/+o+/`
+                 `/sdh+/::/::ss:`ymdhyso//hmMNyhNNms+ososys+/-:/shms/`
+                .+hNNy++oo+/.`.--/osyhdmNNMMMMMMMMMNdsssssoso+hhhhsoo+ymdo.
+              -smNy/+ymmmmmNNNNMNMMMMMNNNmmNMMMMMMMMMho:///:--shydNMMNdo-sNs`
+            -hNd+-sNMNdmNMMMNNNMNNNMMMddNMMNNmNMMMMMMNmy+///::/:-:/++ymNNdmMN:
+          `sNMs`+NMNNNMMMMNNNMMMMMMNmhyso///+ohMmoNMmoo+/::/-:oymNNmsosshdhmMM/
+         +NMMy`hMMMhyNMNMMNNNMds:-.`-:syddmNMMmyo`+yMMho:..-+//++omMNNNNNNNmdNMs
+       :mMMMh`yMNdodNNNMNMMMs.+sdmmmmmdhNMMMNhy/..`-syhNmdyssso+/.`:yNMMMMNMNMMMy
+      :NMNh:-+MMh+mdNNNNNMd.+NNMMMMMMMMmho:-......:--::ohNMMMMMMNmNy/.oNMNmNMNMMMs
+     :NMm+/dmmMNydyhNdhMMN.yMMNmhysso+:-``        ```.--:/+sdMMMMMNNNm:-mMNNNNMMMMy
+    :NMy/hNMMMMmNddsh/NmMy-Mms:..`.--.`                ``..-.:yNMMMMNMNs:NMMMNNNNMMy
+   :NNy/mMMMMMMmNMMshsNdMo/d-...``                       ```...-yMMMNNMd`NMMNMdmoNMM-
+  /mMm+NMNNMMNMNNNNNNNNMMmom/                              ```..`+NMMMMh`NMMMMNNdhNMh
+ +NMMmmMNyNMNMMMMMNmmmNMdNNyh+.                             ``````/NMMM::MMMMNMNNmNMN
++MNNMMMNymMNNMMMNNNNNMh+:+dNmddhyoo+`                        ````.`sMMN`sMNNMNNMNNNNN
+dNNNMNNddMNNNNNNmymMN+---::/shdhyyy:                         `````..hMo.NMNMNMMMNmMMd
+dNNNMMNmNNNmmNMNdNMM+.-..----.-:::.                          ````...:mh/NMMMNMMMNNMMh
+sMNNMMNMNNmyNMNdmNMo--.....                                  ``...---:dNMNMMNMMNNNMMN.
+:NNNMMMNNNsmMNmMNMy...`.-.`                                    `.-----:odNmmNMMMMMNMMo
+.NMMMmMMMNmMNNNNMm:-.```..                                       ``-----:/o//dMMMNMMMm
+.NMMMNMMNMMNMNNNNs--.``...                                         `....---..dMNMMMMM`
+.NNMMNNNNNMMMNNNN:-...`...                                          ```.....`+MMMMMMM.
+.MNNNNNNNMMMMMNNy.......-.`                                         ``..---.`.NMMMMMM`
+`NMNMMNNNMMNMMMm-...`.-----.`                                        ``.-----.`yMMMMMd
+ dMMMNNNNMMNNMMo`-....----..`          ``                      `.`` ```.------`:MMMMM-
+ /MMNMNNNMMNMMN-`.`..-.--.` `--..-:-.-.``..``               ```.-......--.----..NMMMd
+ `mMNMNNMMMNNMN.``...-.-../hddyysyhysyyso+--/::-..--...----:::+syyyyhhdddy+:-.-.hMMM:
+  :NNNNNNMMMMMN.`....--.:dy/:-.-/+++ososss+/:+shyo/::/:+os+:+syosyoso+/://ss//.`+MMm
+   +MdmNNMNMMMN+.--....:+-.-:+ooymdddmdhyo++ss+/yMo.`..oNsyhdhmdmmmmNmdo:-.--:+-:MM/
+  `y/..-+dNNMMMo-shhyo++--+sso-`dsymoso.smyso+//.od+/:/ho+yyhd/ymsNhyy./yy/``.-hhmm`
+  .s+md+- oMMMm``.-/sy//-.+/s.  odys+s-  /shyso+.sm+:::yd/hh+:`.hyyhy- `/y/.` `hs/s`
+  -oyMNyhs:NMMo     `.-`         .---` ``.`/::+s/ms````-mo+:`````.--` ````     `sNm`
+  `hsMh`.hymMM:       `-         `          .:+:hy`     od:-`                  .+sM-``
+   o+o/``-/mMM-        .-                ``.```hy`       s.`.`                 -/+M+``
+   .s `./NMMMM-         --            ````  `:ho`        .s`  ```             ./.+My`
+    /: `+MMdMM/          -.  `       `   ..+++-           :d/.             ``:o-`oMy
+     o. .sdNMMm`            `--:://+//.`-///:.           `.ohooo:-.`` `.-:+//:..`hMy
+     `s```.yMMMs                  ```     .y+  `::.:----.-``o:-::/:::--:::-----..mMo
+      :s` `oMNMN-                         :N+  -NNhy/:/sds./:..----------------`/MN
+        +o``-NMNMd`                      `-syyoo++/.++:so/+yN+..--....-..-....--`dM+
+        +:.`oMNNN`                     .:-` `.::.` `--..---/+/---.```........-.:d:
+         ./++Ny::`                   `--`          .--..-----::-..```......---.s.
+           `:os.--`                  .`            `.. ``.------.`.```..-----.:o
+             `h-..`                 ``        .:syy/-/ydho-.--...`````.------.+.
+              +o`.`                        ./ymNNNNNNNmmNNNh:....``.```.-----:s
+              `h-`.                    -/+oyo/:----:---.--:+sso:........--::-+:
+               /d...                 `.++:  -:--/+:/oo+o++-.``--.....-----:-:y
+               `Md:.`                ``     `-:/+ooooo+/-........-----------yo
+                mNNs-`                     `..-/oo+://:/oo:......----------os
+                h:+md:.                  ...``.`         `------.---------++
+               `h..-+ddo.`                            ``.----------------s:
+                h` .--/ydy:`                   `...--------------------+y.
+                h`   ..--+yds+.`               `....----------------:+dN`
+               `y      `.-.-:sdhs:.`    `...````..----------------:smsdm
+               `h         .--..-+ymdy+/:----:----------------.-/shs+.`os
+               `h           `..--..:sdmmhyo/::----------::/+syhy/....`+-
+               -y              `..--..--/oosyyyhhhyyyssoooo/:.`...`.` /-
+               `.                  `..--.......................````   +`
+                                      `...------..-.........``
+                                          ``..-.--........``
+                                               ```..```
+
+");
+            Console.WriteLine();
+            Console.ReadKey();
 
         }// END MAIN
 
     }// END CLASS
 
-}// END NAMESPACE
+} // END NAMESPACE
