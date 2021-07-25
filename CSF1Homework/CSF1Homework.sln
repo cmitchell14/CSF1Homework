@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATMApplication", "ATMApplic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Powers", "Powers\Powers.csproj", "{11A426FD-90A9-463B-ADAA-3A6E110C37DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grades", "Grades\Grades.csproj", "{07491C6F-7E4A-4996-A400-20F58D2D2B38}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{11A426FD-90A9-463B-ADAA-3A6E110C37DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11A426FD-90A9-463B-ADAA-3A6E110C37DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11A426FD-90A9-463B-ADAA-3A6E110C37DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07491C6F-7E4A-4996-A400-20F58D2D2B38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07491C6F-7E4A-4996-A400-20F58D2D2B38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07491C6F-7E4A-4996-A400-20F58D2D2B38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07491C6F-7E4A-4996-A400-20F58D2D2B38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
