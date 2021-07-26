@@ -10,7 +10,12 @@ namespace ATMApplication
     {
         static void Main(string[] args)
         {
-            #region Variables
+            //ATM APPLICATION -- Instructions --
+            //Build and ATM Application that will lockout the user if they account number, and the PIN  are not entered correctly.  (Three attempts each.)
+            //Also, once authenticated, build a menu application, so the user can deposit, withdraw, check balance, etc.
+            //Thank them for using the Banking Services.
+
+            #region Variables  
 
             const string accountNumber = "555666789";
             string inputAccountNbr;
@@ -19,10 +24,10 @@ namespace ATMApplication
             string inputPinNbr;
             bool endLoop = true;
 
-
             #endregion
 
             Console.Title = "===== ATM Application =====";
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\nWelcome to The Bank of the Developers.\n\nPlease enter your account number to begin."); //Prompt user for Account Number.
 
             for (int userAttempts = 1; userAttempts <= 3; userAttempts++)
@@ -33,8 +38,9 @@ namespace ATMApplication
                 switch (inputAccountNbr) //Branches for incorrect and correct Account number.
                 {
                     case accountNumber:
+
                         goto accountCorrect;
-                        break;
+
                     default:
                         Console.WriteLine($"\n\nAccess denied.  Account number {inputAccountNbr} not found. \n\nPlease re-enter your account number. \n\nYou have {attemptsRemaining = 3 - userAttempts} attempts remaining.");
                         break;
@@ -57,8 +63,9 @@ namespace ATMApplication
                 switch (inputPinNbr)  // Branches for incorrect and correct PIN entry.
                 {
                     case pinNbr:
+
                         goto pinCorrect;
-                        break;
+
                     default:
                         Console.WriteLine($"\n\nIncorrect pin number. \n\nPlease re-enter your PIN. \n\nYou have {attemptsRemaining = 3 - userAttempts} attempts remaining.");
                         break;
